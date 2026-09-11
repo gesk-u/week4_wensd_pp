@@ -1,29 +1,34 @@
-import About from "./components/About";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Header from "./components/Header";
-import Services from "./components/Services";
-import Tours from "./components/Tours";
-import Home from "./components/Home";
-import NotFound from "./components/NotFound";
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import about from "../assets/images/about.jpeg";
+import Title from "./Title.jsx";
 
-function App() {
+const About = () => {
   return (
-    <BrowserRouter>
-      <Header />
-      <Hero />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/tours" element={<Tours />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <section className="section" id="about">
+      <div className="section-title">
+      <Title title="about" subTitle="us" />
+      </div>
+      <div className="section-center about-center">
+        <div className="about-img">
+          <img src={about} className="about-photo" alt="awesome beach" />
+        </div>
+        <article className="about-info">
+          <h3>explore the difference</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
+            quisquam harum nam cumque temporibus explicabo dolorum sapiente odio
+            unde dolor?
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
+            quisquam harum nam cumque temporibus explicabo dolorum sapiente odio
+            unde dolor?
+          </p>
+          <a href="#" className="btn">
+            read more
+          </a>
+        </article>
+      </div>
+    </section>
   );
-}
-
-export default App;
+};
+export default About;
